@@ -31,7 +31,9 @@
 					    </h5>
 					  </div>
 					  <div class="card-footer">
-					    <a href="/{{$product->slug}}" class="w-100 btn btn-primary">Buy</a>
+					    <a href="/{{$product->slug}}" class="w-100 btn btn-primary">
+					    	Buy &#8377;{{number_format($product->price, 2)}}
+					    </a>
 					  </div>
 					</div>
 				</div>

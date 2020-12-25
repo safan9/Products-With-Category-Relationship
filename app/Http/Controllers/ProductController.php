@@ -56,7 +56,7 @@ class ProductController extends Controller
         $product->image = $imageName;
         $product->save();
 
-    	return redirect('admin/product/create')->with('msgSaved', 'Product Added Successfully');
+    	return redirect('admin/product/')->with('msgSaved', 'Product Added Successfully');
     }
 
     public function edit($id){

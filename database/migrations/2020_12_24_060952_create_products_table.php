@@ -22,8 +22,12 @@ class CreateProductsTable extends Migration
             $table->string("seo_title");
             $table->string("seo_description");
             $table->string("image");
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->integer("category_id")->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
         });
     }
 

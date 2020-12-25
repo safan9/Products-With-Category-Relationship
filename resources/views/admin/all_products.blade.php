@@ -9,13 +9,15 @@
 	            </div>
 	        </div>
     	@endif
-
+    
 	@if ($products->isEmpty())
-	    <p>No Products</p>
+	    <p class="d-inline mt-2">No Products</p>
+	    <a class="btn btn-primary d-inline mt-5" 
+				href="{{url('admin/product/create')}}">Add Product</a>
 	@else
 		<div class="p-3 center">
 			<h4 class="d-inline">All Products</h4>
-			<a class="btn btn-primary d-inline" 
+			<a class="btn btn-primary d-inline mt-5" 
 				href="{{url('admin/product/create')}}">Add Product</a>
 		</div>
 		<table class="table">
