@@ -42,7 +42,7 @@ class ProductController extends Controller
         $price = $request->price;
         $seo_title = $request->seo_title;
         $seo_description = $request->seo_description;
-        $imageName = $slug.'.'.time().'.'.$request->image->getClientOriginalExtension();
+        $imageName = $slug.'-'.time().'.'.$request->image->getClientOriginalExtension();
         $path = $request->image->storeAs('public/images/product', $imageName);
             
         $product = new Product();
@@ -88,7 +88,7 @@ class ProductController extends Controller
         $seo_title = $request->seo_title;
         $seo_description = $request->seo_description;
         if($request->hasFile('image')) {
-            $imageName = $slug.'.'.time().'.'.$request->image->getClientOriginalExtension();
+            $imageName = $slug.'-'.time().'.'.$request->image->getClientOriginalExtension();
             $path = $request->image->storeAs('public/images/product', $imageName);
         }else{
             $imageName = $product->image;
